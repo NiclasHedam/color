@@ -1,26 +1,23 @@
 # CPR
-[![Build Status](https://travis-ci.org/NiclasHedam/CPR.svg?branch=master)](https://travis-ci.org/NiclasHedam/CPR)
+[![Build Status](https://travis-ci.org/NiclasHedam/ColorComparison.svg?branch=master)](https://travis-ci.org/NiclasHedam/ColorComparison)
 
-A tool for validating Danish CPR-numbers, determining gender and calculating birthday.
-Almost any CPR-numbers can be validated with modulus 11, which this tool does.
-As of 2007, some CPR-numbers might return invalid, due to the lack of available CPR-numbers on some given dates.
+..
 
 ## Installation
 
 Install it using composer
 
-`composer require niclashedam/cpr`
+`composer require niclashedam/color-comparison`
 
 ## Usage
 
-Just include it and instantiate the CPR class.
+Just include it and instantiate the ColorComparison class.
 
 
 ```
-use NiclasHedam/CPR;
+use NiclasHedam/ColorComparison;
 
-$cpr = new CPR("2412958899");
-var_dump($cpr->valid());
+
 ```
 
 See [exampes/example.php](examples/example.php) for more examples
