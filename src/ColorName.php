@@ -2,7 +2,7 @@
 namespace NiclasHedam;
 
 class ColorName{
-    const Colors = array(
+    public static $colors = array(
        "Acid Green"                                => array(176, 191, 26),
        "Aero"                                      => array(124, 185, 232),
        "Aero Blue"                                 => array(201, 255, 229),
@@ -1180,7 +1180,7 @@ class ColorName{
     );
 
     public static function nameFromRGB($red, $green, $blue){
-        foreach(static::Colors as $key => $color){
+        foreach(static::$colors as $key => $color){
             if($color[0] === $red && $color[1] === $green && $color[2] === $blue){
                 return $key;
             }
