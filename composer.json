@@ -1,5 +1,5 @@
 {
-    "name": "niclashedam/color-comparison",
+    "name": "niclashedam/color",
     "description": "Calculate the difference/likeliness between two colors",
     "type": "library",
     "license": "Apache 2.0",
@@ -21,7 +21,8 @@
     },
     "autoload": {
         "files":[
-            "src/ColorComparison.php"
+            "src/Color.php",
+            "src/ColorName.php"
         ]
     }
 }
