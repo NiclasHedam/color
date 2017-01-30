@@ -1,7 +1,9 @@
 # CPR
 [![Build Status](https://travis-ci.org/NiclasHedam/color.svg?branch=master)](https://travis-ci.org/NiclasHedam/color)
 
-..
+This tool providers methods to convert from RGB and CMYK, to RGB, CMYK and HEX.
+Also this tool can calculate the relative difference between two given colors.
+This cool can also provide you with the name of the color you provided.
 
 ## Installation
 
@@ -11,7 +13,7 @@ Install it using composer
 
 ## Usage
 
-Just include it and instantiate the ColorComparison class.
+Just include it and instantiate the Color class.
 
 
 ```
@@ -24,7 +26,7 @@ $black->name(); // "Black" (Will return false if name is not found)
 $black->toHEX(); // "#000000"
 
 $orange = Color::fromRGB(255, 165, 0);
-$orange->differenceBetween($white);
+$orange->differenceBetween($white); //61.2255
 
 ```
 
