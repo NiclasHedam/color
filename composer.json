@@ -1,6 +1,6 @@
 {
     "name": "niclashedam/color",
-    "description": "Calculate the difference/likeliness between two colors",
+    "description": "Color conversion, color likeliness and color names",
     "type": "library",
     "license": "Apache 2.0",
     "authors": [

@@ -1,5 +1,5 @@
 # CPR
-[![Build Status](https://travis-ci.org/NiclasHedam/ColorComparison.svg?branch=master)](https://travis-ci.org/NiclasHedam/ColorComparison)
+[![Build Status](https://travis-ci.org/NiclasHedam/color.svg?branch=master)](https://travis-ci.org/NiclasHedam/color)
 
 ..
 
@@ -7,7 +7,7 @@
 
 Install it using composer
 
-`composer require niclashedam/color-comparison`
+`composer require niclashedam/color`
 
 ## Usage
 
@@ -15,8 +15,16 @@ Just include it and instantiate the ColorComparison class.
 
 
 ```
-use NiclasHedam/ColorComparison;
+use NiclasHedam/Color;
 
+$black = Color::fromRGB(0, 0, 0);
+$white = Color::fromCMYK(0, 0, 0, 0);
+$black->differenceBetween($white); //100
+$black->name(); // "Black" (Will return false if name is not found)
+$black->toHEX(); // "#000000"
+
+$orange = Color::fromRGB(255, 165, 0);
+$orange->differenceBetween($white);
 
 ```
 
