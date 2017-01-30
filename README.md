@@ -1,4 +1,4 @@
-# CPR
+# Color
 [![Build Status](https://travis-ci.org/NiclasHedam/color.svg?branch=master)](https://travis-ci.org/NiclasHedam/color)
 
 This tool providers methods to convert from RGB and CMYK, to RGB, CMYK and HEX.
