@@ -62,7 +62,7 @@ class Color
         $m = (255 - $this->green) / 255.0 * 100;
         $y = (255 - $this->blue) / 255.0 * 100;
 
-        $b = min([$c, $m, $y]);
+        $b = min([$c, $m, $y])/100;
         $c = round($c - $b, 4);
         $m = round($m - $b, 4);
         $y = round($y - $b, 4);
