@@ -25,8 +25,8 @@ class ColorTest extends \PHPUnit_Framework_TestCase
 
         $this->color5 = Color::fromCMYK(47, 48, 0, 68);
         $this->color6 = Color::fromCMYK(0, 85, 85, 49);
-        $this->color7 = Color::fromCYMK(15, 39, 23, 82);
-        $this->color8 = Color::fromCYMK(47, 11, 86, 0);
+        $this->color7 = Color::fromCMYK(15, 39, 23, 82);
+        $this->color8 = Color::fromCMYK(47, 11, 86, 0);
     }
 
     public function testLikeliness()
