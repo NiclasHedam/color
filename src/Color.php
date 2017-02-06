@@ -33,11 +33,13 @@ class Color
         $cyan = $cyan / 100;
         $magenta = $magenta / 100;
         $yellow = $yellow / 100;
-        $key = $key / 100;
 
-        $r = 1 - ($cyan * (1 - $key)) - $key;
-        $g = 1 - ($magenta * (1 - $key)) - $key;
-        $b = 1 - ($yellow * (1 - $key)) - $key;
+        $key = $key / 100;
+        $reverseKey = 1 - $key;
+
+        $r = 1 - ($cyan * $reverseKey) - $key;
+        $g = 1 - ($magenta * $reverseKey) - $key;
+        $b = 1 - ($yellow * $reverseKey) - $key;
 
         return new self(round($r * 255), round($g * 255), round($b * 255));
     }
@@ -64,7 +66,7 @@ class Color
 
         $k = 1 - max([$r, $g, $b]);
 
-        if($k === 1){ //Edgecase.
+        if ($k === 1) { //Edgecase.
             return ['c' => 0.0, 'm' => 0.0, 'y' => 0, 'k' => 100.0];
         }
 

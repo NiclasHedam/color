@@ -13,6 +13,8 @@ class ColorTest extends \PHPUnit_Framework_TestCase
 
     public $color5;
     public $color6;
+    public $color7;
+    public $color8;
 
     public function __construct()
     {
@@ -23,6 +25,8 @@ class ColorTest extends \PHPUnit_Framework_TestCase
 
         $this->color5 = Color::fromCMYK(47, 48, 0, 68);
         $this->color6 = Color::fromCMYK(0, 85, 85, 49);
+        $this->color7 = Color::fromCYMK(15, 39, 23, 82);
+        $this->color8 = Color::fromCYMK(47, 11, 86, 0);
     }
 
     public function testLikeliness()
@@ -46,6 +50,8 @@ class ColorTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals(['r' => 43, 'g' => 42, 'b' => 82], $this->color5->toRGB());
         $this->assertEquals(['r' => 130, 'g' => 20, 'b' => 20], $this->color6->toRGB());
+        $this->assertEquals(['r' => 39, 'g' => 28, 'b' => 35], $this->color7->toRGB());
+        $this->assertEquals(['r' => 135, 'g' => 227, 'b' => 36], $this->color8->toRGB());
 
         $this->assertEquals(['c' => 0.0, 'm' => 0.0, 'y' => 0.0, 'k' => 100.0], $this->color1->toCMYK());
         $this->assertEquals(['c' => 0.0, 'm' => 0.0, 'y' => 0.0, 'k' => 0.0], $this->color2->toCMYK());
