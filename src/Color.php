@@ -58,14 +58,19 @@ class Color
 
     public function toCMYK()
     {
-        $c = (255 - $this->red) / 255.0 * 100;
-        $m = (255 - $this->green) / 255.0 * 100;
-        $y = (255 - $this->blue) / 255.0 * 100;
+        $r = $this->red / 255;
+        $g = $this->green / 255;
+        $b = $this->blue / 255;
 
-        $b = min([$c, $m, $y])/100;
-        $c = round($c - $b, 4);
-        $m = round($m - $b, 4);
-        $y = round($y - $b, 4);
+        $k = 1 - max([$r, $g, $b]);
+
+        if(1 - $k === 0){
+            return ['c' => 0, 'm' => 0, 'y' => 0, 'k' => $b];
+        }
+
+        $c = round((1 - $r - $k) / (1 - $k), 4);
+        $m = round((1 - $g - $k) / (1 - $k), 4);
+        $y = round((1 - $b - $k) / (1 - $k), 4);
 
         return ['c' => $c, 'm' => $m, 'y' => $y, 'k' => $b];
     }
