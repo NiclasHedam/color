@@ -1181,14 +1181,18 @@ class ColorName
         'Zomp'                                      => [57, 167, 142],
     ];
 
-    public static function nameFromRGB($red, $green, $blue)
+    public static function nameFromColor(Color $color)
     {
-        foreach (static::$colors as $key => $color) {
-            if ($color[0] === $red && $color[1] === $green && $color[2] === $blue) {
-                return $key;
+        $bestMatch = "";
+        $bestDifference = 100.0;
+        foreach (static::$colors as $key => $RawOtherColor) {
+            $otherColor = Color::fromRGB($RawOtherColor[0], $RawOtherColor[1], $RawOtherColor[2]);
+            $difference = $color->differenceBetween($otherColor);
+            if($bestDifference > $difference){
+                $bestMatch = $key;
+                $bestDifference = $difference;
             }
         }
-
-        return false;
+        return $bestMatch;
     }
 }

@@ -24,7 +24,7 @@ use NiclasHedam/Color;
 $black = Color::fromRGB(0, 0, 0);
 $white = Color::fromCMYK(0, 0, 0, 0);
 $black->differenceBetween($white); //100
-$black->name(); // "Black" (Will return false if name is not found)
+$black->name(); // "Black"
 $black->toHEX(); // "#000000"
 
 $orange = Color::fromRGB(255, 165, 0);

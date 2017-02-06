@@ -19,7 +19,7 @@ class ColorTest extends \PHPUnit_Framework_TestCase
         $this->color1 = Color::fromRGB(0, 0, 0); //Black
         $this->color2 = Color::fromRGB(255, 255, 255); //White
         $this->color3 = Color::fromRGB(255, 153, 102); //Atomic Tangerine
-        $this->color4 = Color::fromRGB(102, 255, 255); //Light blue
+        $this->color4 = Color::fromRGB(102, 255, 255); //Electric Blue
 
         $this->color5 = Color::fromCMYK(47, 48, 0, 68);
         $this->color6 = Color::fromCMYK(0, 85, 85, 49);
@@ -27,33 +27,34 @@ class ColorTest extends \PHPUnit_Framework_TestCase
 
     public function testLikeliness()
     {
-        $this->assertEquals($this->color1->differenceBetween($this->color2), 100); //100
-        $this->assertEquals($this->color2->differenceBetween($this->color1), 100); //100
-        $this->assertEquals($this->color3->differenceBetween($this->color2), 41.6333);
-        $this->assertEquals($this->color2->differenceBetween($this->color3), 41.6333);
-        $this->assertEquals($this->color3->differenceBetween($this->color4), 54.1603);
+        $this->assertEquals(100, $this->color1->differenceBetween($this->color2)); //100
+        $this->assertEquals(100, $this->color2->differenceBetween($this->color1)); //100
+        $this->assertEquals(41.6333, $this->color3->differenceBetween($this->color2));
+        $this->assertEquals(41.6333, $this->color2->differenceBetween($this->color3));
+        $this->assertEquals(54.1603, $this->color3->differenceBetween($this->color4));
     }
 
     public function testName()
     {
-        $this->assertEquals($this->color1->name(), 'Black');
-        $this->assertEquals($this->color2->name(), 'White');
-        $this->assertEquals($this->color3->name(), 'Atomic Tangerine');
-        $this->assertEquals($this->color4->name(), false);
+        $this->assertEquals('Black', $this->color1->name());
+        $this->assertEquals('White', $this->color2->name());
+        $this->assertEquals('Atomic Tangerine', $this->color3->name());
+        $this->assertEquals('Electric Blue', $this->color4->name());
     }
 
     public function testConversion()
     {
-        $this->assertEquals($this->color5->toRGB(), ['r' => 43, 'g' => 42, 'b' => 82]);
-        $this->assertEquals($this->color6->toRGB(), ['r' => 130, 'g' => 20, 'b' => 20]);
+        $this->assertEquals(['r' => 43, 'g' => 42, 'b' => 82], $this->color5->toRGB());
+        $this->assertEquals(['r' => 130, 'g' => 20, 'b' => 20], $this->color6->toRGB());
 
-        $this->assertEquals($this->color1->toCMYK(), ['c' => 0, 'm' => 0, 'y' => 0, 'k' => 1]);
-        $this->assertEquals($this->color2->toCMYK(), ['c' => 0, 'm' => 0, 'y' => 0, 'k' => 0]);
-        $this->assertEquals($this->color3->toCMYK(), ['c' => 0, 'm' => 0.4, 'y' => 0.6, 'k' => 0]);
+        $this->assertEquals(['c' => 0.0, 'm' => 0.0, 'y' => 0.0, 'k' => 100.0], $this->color1->toCMYK());
+        $this->assertEquals(['c' => 0.0, 'm' => 0.0, 'y' => 0.0, 'k' => 0.0], $this->color2->toCMYK());
+        $this->assertEquals(['c' => 0.0, 'm' => 40.0, 'y' => 60.0, 'k' => 0.0], $this->color3->toCMYK());
+        $this->assertEquals(['c' => 60.0, 'm' => 0.0, 'y' => 0.0, 'k' => 0.0], $this->color4->toCMYK());
 
 
-        $this->assertEquals($this->color1->toHEX(), '#000000');
-        $this->assertEquals($this->color2->toHEX(), '#FFFFFF');
+        $this->assertEquals('#000000', $this->color1->toHEX());
+        $this->assertEquals('#FFFFFF', $this->color2->toHEX());
     }
 
     public function testInvalids()

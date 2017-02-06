@@ -64,15 +64,16 @@ class Color
 
         $k = 1 - max([$r, $g, $b]);
 
-        if(1 - $k === 0){
-            return ['c' => 0, 'm' => 0, 'y' => 0, 'k' => $b];
+        if($k === 1){ //Edgecase.
+            return ['c' => 0.0, 'm' => 0.0, 'y' => 0, 'k' => 100.0];
         }
 
-        $c = round((1 - $r - $k) / (1 - $k), 4);
-        $m = round((1 - $g - $k) / (1 - $k), 4);
-        $y = round((1 - $b - $k) / (1 - $k), 4);
+        $c = round((1 - $r - $k) / (1 - $k) * 100, 4);
+        $m = round((1 - $g - $k) / (1 - $k) * 100, 4);
+        $y = round((1 - $b - $k) / (1 - $k) * 100, 4);
 
-        return ['c' => $c, 'm' => $m, 'y' => $y, 'k' => $b];
+
+        return ['c' => $c, 'm' => $m, 'y' => $y, 'k' => $k];
     }
 
     public function toRGB()
@@ -86,6 +87,6 @@ class Color
 
     public function name()
     {
-        return ColorName::nameFromRGB($this->red, $this->green, $this->blue);
+        return ColorName::nameFromColor($this);
     }
 }
