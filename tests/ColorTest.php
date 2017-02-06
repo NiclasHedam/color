@@ -47,6 +47,11 @@ class ColorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($this->color5->toRGB(), ['r' => 43, 'g' => 42, 'b' => 82]);
         $this->assertEquals($this->color6->toRGB(), ['r' => 130, 'g' => 20, 'b' => 20]);
 
+        $this->assertEquals($this->color1->toCMYK(), ['c' => 0, 'm' => 0, 'y' => 0, 'k' => 1]);
+        $this->assertEquals($this->color2->toCMYK(), ['c' => 0, 'm' => 0, 'y' => 0, 'k' => 0]);
+        $this->assertEquals($this->color3->toCMYK(), ['c' => 0, 'm' => 0.4, 'y' => 0.6, 'k' => 0]);
+
+
         $this->assertEquals($this->color1->toHEX(), '#000000');
         $this->assertEquals($this->color2->toHEX(), '#FFFFFF');
     }

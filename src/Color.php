@@ -19,31 +19,16 @@ class Color
 
     public static function fromRGB($red, $green, $blue)
     {
-        if ($red < 0 || $red > 255) {
-            throw new Exception('Red color invalid', 1);
-        }
-        if ($green < 0 || $green > 255) {
-            throw new Exception('Green color invalid', 1);
-        }
-        if ($blue < 0 || $blue > 255) {
-            throw new Exception('Blue color invalid', 1);
+        if ($red < 0 || $red > 255 || $green < 0 || $green > 255 || $blue < 0 || $blue > 255) {
+            throw new Exception('Invalid RGB color', 1);
         }
         return new self($red, $green, $blue);
     }
 
     public static function fromCMYK($cyan, $magenta, $yellow, $key)
     {
-        if ($cyan < 0 || $cyan > 100) {
-            throw new Exception('Cyan color invalid', 1);
-        }
-        if ($magenta < 0 || $magenta > 100) {
-            throw new Exception('Magenta color invalid', 1);
-        }
-        if ($yellow < 0 || $yellow > 100) {
-            throw new Exception('Yellow color invalid', 1);
-        }
-        if ($key < 0 || $key > 100) {
-            throw new Exception('Key color invalid', 1);
+        if ($cyan < 0 || $cyan > 100 || $magenta < 0 || $magenta > 100 || $yellow < 0 || $yellow > 100 || $key < 0 || $key > 100) {
+            throw new Exception('Invalid CMYK color', 1);
         }
         $cyan = $cyan / 100;
         $magenta = $magenta / 100;
