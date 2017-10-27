@@ -3,8 +3,10 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 use NiclasHedam\Color;
+use PHPUnit\Framework\TestCase;
 
-class ColorTest extends \PHPUnit_Framework_TestCase
+
+class ColorTest extends TestCase
 {
     public $color1;
     public $color2;
