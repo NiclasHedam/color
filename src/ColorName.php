@@ -1183,7 +1183,7 @@ class ColorName
 
     public static function nameFromColor(Color $color)
     {
-        $bestMatch = "";
+        $bestMatch = '';
         $bestDifference = 100.0;
         foreach (static::$colors as $key => $RawOtherColor) {
             $otherColor = Color::fromRGB($RawOtherColor[0], $RawOtherColor[1], $RawOtherColor[2]);
@@ -1193,6 +1193,7 @@ class ColorName
                 $bestDifference = $difference;
             }
         }
+
         return $bestMatch;
     }
 }

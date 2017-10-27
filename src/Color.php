@@ -22,6 +22,7 @@ class Color
         if ($red < 0 || $red > 255 || $green < 0 || $green > 255 || $blue < 0 || $blue > 255) {
             throw new Exception('Invalid RGB color', 1);
         }
+
         return new self($red, $green, $blue);
     }
 
@@ -73,7 +74,6 @@ class Color
         $c = round((1 - $r - $k) / (1 - $k) * 100, 4);
         $m = round((1 - $g - $k) / (1 - $k) * 100, 4);
         $y = round((1 - $b - $k) / (1 - $k) * 100, 4);
-
 
         return ['c' => $c, 'm' => $m, 'y' => $y, 'k' => $k];
     }

@@ -5,7 +5,6 @@ require_once __DIR__.'/../vendor/autoload.php';
 use NiclasHedam\Color;
 use PHPUnit\Framework\TestCase;
 
-
 class ColorTest extends TestCase
 {
     public $color1;
@@ -60,7 +59,6 @@ class ColorTest extends TestCase
         $this->assertEquals(['c' => 0.0, 'm' => 0.0, 'y' => 0.0, 'k' => 0.0], $this->color2->toCMYK());
         $this->assertEquals(['c' => 0.0, 'm' => 40.0, 'y' => 60.0, 'k' => 0.0], $this->color3->toCMYK());
         $this->assertEquals(['c' => 60.0, 'm' => 0.0, 'y' => 0.0, 'k' => 0.0], $this->color4->toCMYK());
-
 
         $this->assertEquals('#000000', $this->color1->toHEX());
         $this->assertEquals('#FFFFFF', $this->color2->toHEX());
