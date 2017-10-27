@@ -1,7 +1,6 @@
 # Color
-[![Build Status](https://scrutinizer-ci.com/g/NiclasHedam/color/badges/build.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/color/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/NiclasHedam/color/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/color/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/NiclasHedam/color/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/color/?branch=master)
+[![Build Status](https://travis-ci.org/NiclasHedam/color.svg?branch=master)](https://travis-ci.org/NiclasHedam/color)
+[![Coverage Status](https://coveralls.io/repos/github/NiclasHedam/color/badge.svg?branch=master)](https://coveralls.io/github/NiclasHedam/color?branch=master)
 
 This tool providers methods to convert from RGB and CMYK, to RGB, CMYK and HEX.
 Also this tool can calculate the relative difference between two given colors.

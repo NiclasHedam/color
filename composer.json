@@ -15,7 +15,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "larapack/dd": "1.*"
+        "larapack/dd": "1.*",
+        "php-coveralls/php-coveralls": "^1.0"
     },
     "scripts": {
         "test": "phpunit ./tests"
