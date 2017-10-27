@@ -18,8 +18,9 @@ class ColorTest extends TestCase
     public $color7;
     public $color8;
 
-    public function __construct()
+    public function __construct($name = null, array $data = [], $dataName = '')
     {
+        parent::__construct($name, $data, $dataName);
         $this->color1 = Color::fromRGB(0, 0, 0); //Black
         $this->color2 = Color::fromRGB(255, 255, 255); //White
         $this->color3 = Color::fromRGB(255, 153, 102); //Atomic Tangerine
