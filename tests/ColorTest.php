@@ -64,24 +64,36 @@ class ColorTest extends TestCase
         $this->assertEquals('#FFFFFF', $this->color2->toHEX());
     }
 
-    public function testInvalids()
+    public function testExceptionPositive()
     {
-        try {
-            Color::fromRGB(215, 242, 275);
-            $this->fail();
-        } catch (Exception $e) {
-        }
+        $this->expectException(Exception::class);
+        Color::fromRGB(267, 24, 26);
+    }
 
-        try {
-            Color::fromRGB(-252, 242, 35);
-            $this->fail();
-        } catch (Exception $e) {
-        }
+    public function testExceptionNegative()
+    {
+        $this->expectException(Exception::class);
+        Color::fromRGB(-267, 24, 26);
+    }
 
-        try {
-            $color = Color::fromCMYK(105, 45, 23, 66);
-            $this->fail();
-        } catch (Exception $e) {
-        }
+    public function testCMYKBlack()
+    {
+        $color = Color::fromCMYK(0, 0, 0, 100);
+
+        $this->assertEquals($this->color1, $color);
+    }
+
+    public function testCMYKWhite()
+    {
+        $color = Color::fromCMYK(0, 0, 0, 0);
+
+        $this->assertEquals($this->color2, $color);
+    }
+
+    public function testCMYKAtomic()
+    {
+        $color = Color::fromCMYK(0, 40, 60, 0);
+
+        $this->assertEquals($this->color3, $color);
     }
 }
