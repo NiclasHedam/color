@@ -64,16 +64,28 @@ class ColorTest extends TestCase
         $this->assertEquals('#FFFFFF', $this->color2->toHEX());
     }
 
-    public function testExceptionPositive()
+    public function testRGBExceptionPositive()
     {
         $this->expectException(Exception::class);
         Color::fromRGB(267, 24, 26);
     }
 
-    public function testExceptionNegative()
+    public function testRGBExceptionNegative()
     {
         $this->expectException(Exception::class);
         Color::fromRGB(-267, 24, 26);
+    }
+
+    public function testCYMKExceptionPositive()
+    {
+        $this->expectException(Exception::class);
+        Color::fromCMYK(267, 24, 26, 10);
+    }
+
+    public function testCYMKExceptionNegative()
+    {
+        $this->expectException(Exception::class);
+        Color::fromCMYK(-267, 24, 26, 10);
     }
 
     public function testCMYKBlack()
