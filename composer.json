@@ -2,7 +2,7 @@
     "name": "niclashedam/color",
     "description": "Color conversion, color likeliness and color names",
     "type": "library",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Niclas Hedam",
