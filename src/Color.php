@@ -45,7 +45,7 @@ class Color
         return new self(round($r * 255), round($g * 255), round($b * 255));
     }
 
-    public function differenceBetween(Color $color)
+    public function differenceBetween(self $color)
     {
         return round(sqrt(
                 pow($this->red - $color->red, 2)
