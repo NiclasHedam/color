@@ -1,6 +1,7 @@
 # Color
 [![Build Status](https://travis-ci.org/NiclasHedam/color.svg?branch=master)](https://travis-ci.org/NiclasHedam/color)
 [![Coverage Status](https://coveralls.io/repos/github/NiclasHedam/color/badge.svg?branch=master)](https://coveralls.io/github/NiclasHedam/color?branch=master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fniclashedam%2Fcolor.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fniclashedam%2Fcolor?ref=badge_shield)
 
 This tool providers methods to convert from RGB and CMYK, to RGB, CMYK and HEX.
 Also this tool can calculate the relative difference between two given colors.
@@ -44,3 +45,6 @@ See [exampes/example.php](examples/example.php) for more examples
 ## License
 
 Released under the MIT license
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fniclashedam%2Fcolor.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fniclashedam%2Fcolor?ref=badge_large)
